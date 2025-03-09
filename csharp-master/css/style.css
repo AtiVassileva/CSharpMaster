@@ -40,7 +40,7 @@ html {
 body {
     color: #666666;
     font-size: 14px;
-    font-family: Poppins;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.80857;
     font-weight: normal;
     overflow-x: hidden !important;
@@ -375,6 +375,7 @@ button {
     padding: 20px;
     background-color: #dbc64c;
     border-radius: 7px;
+    cursor: pointer;
 }
 
 .box_main.active {
@@ -514,7 +515,7 @@ button {
 .image_3 {
     width: 100%;
     float: left;
-    background-image: url(../images/img-3.png);
+    background-image: url(../images/inheritance-image.png);
     height: 200px;
     background-size: 100%;
     padding: 70px 0px;
@@ -523,7 +524,7 @@ button {
 .image_4 {
     width: 100%;
     float: left;
-    background-image: url(../images/img-4.png);
+    background-image: url(../images/encapsulation.png);
     height: 200px;
     background-size: 100%;
     padding: 70px 0px;
@@ -532,7 +533,16 @@ button {
 .image_5 {
     width: 100%;
     float: left;
-    background-image: url(../images/img-5.png);
+    background-image: url(../images/polymorphism.png);
+    height: 200px;
+    background-size: 100%;
+    padding: 70px 0px;
+}
+
+.image_5_1 {
+    width: 100%;
+    float: left;
+    background-image: url(../images/abstraction.jpg);
     height: 200px;
     background-size: 100%;
     padding: 70px 0px;
