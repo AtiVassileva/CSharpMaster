@@ -672,6 +672,16 @@ button {
     padding: 163px 0px;
 }
 
+.image_7 {
+    width: 100%;
+    float: left;
+    background-image: url(../images/about.jpg);
+    background-repeat: no-repeat;
+    height: 386px;
+    background-size: 100%;
+    padding: 163px 0px;
+}
+
 .play_icon_3 {
     width: 100%;
     float: left;
