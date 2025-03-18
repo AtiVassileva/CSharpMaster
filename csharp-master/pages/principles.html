@@ -1,0 +1,236 @@
+<div class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="logo"><a href="/" class="logo-link"><img src="images/logo.png" width="100">Master</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/" onclick="route()">Начало</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about" onclick="route()">За нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/lessons" onclick="route()">4-те принципа</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/solid" onclick="route()">SOLID</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div id="inheritance" class="lesson-container">
+    <h1><b>OOП в C#: Наследяване</b></h1>
+    <p>Наследяването е основен принцип в обектно-ориентираното програмиране (OOP). То позволява на един клас (наследник)
+        да наследи функционалностите на друг клас (родител).</p>
+
+    <h2>Пример за наследяване в C#</h2>
+    <p>Нека разгледаме как един клас <code>Dog</code> може да наследи от базовия клас <code>Animal</code>:</p>
+
+    <div class="code">
+        <pre>
+public class Animal 
+{
+    public void MakeSound() 
+    {
+        Console.WriteLine("Животното издава звук!");
+    }
+}
+
+public class Dog : Animal 
+{
+    public void Bark() 
+    {
+        Console.WriteLine("Кучето лае!");
+    }
+}
+
+public class Program 
+{
+    public static void Main() 
+    {
+        Dog myDog = new Dog();
+        myDog.MakeSound(); // Наследен метод
+        myDog.Bark(); // Собствен метод
+    }
+}
+        </pre>
+    </div>
+    <br />
+    <h2>Илюстрация</h2>
+    <img class="lessons-pic" src="../images/inheritance-image.png" alt="Наследяване">
+
+    <p>В този пример <code>Dog и Cat</code> наследяват класа Animal, както и метода <code>MakeSound()</code> от
+        <code>Animal.</code>Освен това, те добавят и свои методи <code>Bark() и Meow()</code>.</p>
+</div>
+
+<div id="encapsulation" class="lesson-container">
+    <h1><b>OOП в C#: Енкапсулация</b></h1>
+    <p>Енкапсулацията е принцип в обектно-ориентираното програмиране, който ограничава достъпа до данните в един клас, като ги защитава от директна модификация.</p>
+
+    <h2>Пример за енкапсулация в C#</h2>
+    <p>Нека разгледаме как можем да скрием данни в един клас и да имаме контрол над достъпа:</p>
+
+    <div class="code">
+        <pre>
+            public class BankAccount 
+            {
+                private double balance; // Частна променлива
+            
+                public void Deposit(double amount) 
+                {
+                    if (amount > 0) 
+                    {
+                        balance += amount;
+                    }
+                }
+            
+                public double GetBalance() 
+                {
+                    return balance;
+                }
+            }
+            
+            public class Program 
+            {
+                public static void Main() 
+                {
+                    BankAccount account = new BankAccount();
+                    account.Deposit(100);
+                    Console.WriteLine("Баланс: " + account.GetBalance());
+                }
+            }
+        </pre>
+    </div>
+    <p>В този пример променливата <code>balance</code>  е скрита и достъпна само чрез методите <code>Deposit()</code> и
+        <code>GetBalance().</code></p>
+    <br />
+    <h2>Илюстрация</h2>
+    <img class="lessons-pic" src="../images/encapsulation.png" alt="Енкапсулация">
+
+    <p>На снимката енкапсулацията е представена чрез <code>капсула,</code> която символизира клас, съдържащ вътре
+        <code>променливи (червени топчета)</code> и <code>методи (зелени топчета). </code>Това подчертава идеята, че
+        данните и функциите са капсулирани заедно в класа, осигурявайки контрол над достъпа.</p>
+</div>
+
+<div id="polymorphism" class="lesson-container">
+    <h1><b>OOП в C#: Полиморфизъм</b></h1>
+    <p>Полиморфизмът е един от основните принципи на обектно-ориентираното програмиране, който позволява на един интерфейс да бъде използван за различни типове обекти.</p>
+
+    <h2>Пример за полиморфизъм в C#</h2>
+    <p>Нека разгледаме как различни класове могат да имат еднакви методи, но с различна <code>реализация:</code></p>
+
+    <div class="code">
+        <pre>
+            public class Animal 
+            {
+                public virtual void MakeSound() 
+                {
+                    Console.WriteLine("Животното издава звук.");
+                }
+            }
+            
+            public class Dog : Animal 
+            {
+                public override void MakeSound() 
+                {
+                    Console.WriteLine("Кучето лае.");
+                }
+            }
+            
+            public class Cat : Animal 
+            {
+                public override void MakeSound() 
+                {
+                    Console.WriteLine("Котката мяука.");
+                }
+            }
+            
+            public class Program 
+            {
+                public static void Main() 
+                {
+                    Animal myDog = new Dog();
+                    Animal myCat = new Cat();
+                    
+                    myDog.MakeSound(); // Кучето лае.
+                    myCat.MakeSound(); // Котката мяука.
+                }
+            }
+        </pre>
+    </div>
+    <p>В този пример методът <code>MakeSound()</code> е дефиниран в базовия клас, но е презаписан чрез (<code>override</code>) в наследените класове, което позволява различно поведение.</p>
+    <br />
+    <h2>Илюстрация</h2>
+    <img class="lessons-pic" src="../images/polymorphism.png" alt="Полиморфизъм">
+
+    <p>Картинката илюстрира концепцията за полиморфизъм чрез един и същ герой, който изпълнява <code>различни роли</code> – например пазарува, работи на компютър, говори по телефона, представя презентация, грижи се за дете и дори е в супергеройска поза. Това показва, че един обект (човекът) може да има <code>различни форми и поведения</code> в зависимост от контекста, което е основен принцип в обектно-ориентираното програмиране.</p>
+</div>
+
+<div id="abstraction" class="lesson-container">
+    <h1><b>OOП в C#: Абстракция</b></h1>
+    <p>Абстракцията е принцип в обектно-ориентираното програмиране, който позволява да се скрият детайлите на имплементацията и да се предостави само необходимата функционалност.</p>
+
+    <h2>Пример за абстракция в C#</h2>
+    <p>В следващия пример ще използваме абстрактен клас, за да дефинираме <code>обща структура</code> за всички превозни средства:</p>
+
+    <div class="code">
+        <pre>
+            public abstract class Vehicle 
+            {
+                public abstract void StartEngine(); // Абстрактен метод
+            }
+            
+            public class Car : Vehicle 
+            {
+                public override void StartEngine() 
+                {
+                    Console.WriteLine("Колата стартира двигателя.");
+                }
+            }
+            
+            public class Motorcycle : Vehicle 
+            {
+                public override void StartEngine() 
+                {
+                    Console.WriteLine("Мотоциклетът стартира двигателя.");
+                }
+            }
+            
+            public class Program 
+            {
+                public static void Main() 
+                {
+                    Vehicle myCar = new Car();
+                    Vehicle myMotorcycle = new Motorcycle();
+                    
+                    myCar.StartEngine(); // Колата стартира двигателя.
+                    myMotorcycle.StartEngine(); // Мотоциклетът стартира двигателя.
+                }
+            }
+        </pre>
+    </div>
+    <p>В този пример класът <code>Vehicle</code> дефинира абстрактен метод <code>StartEngine()</code>, който се имплементира различно в неговите наследници.</p>
+    <br />
+    <h2>Илюстрация</h2>
+    <img class="lessons-pic" src="../images/abstraction.png" alt="Абстракция">
+
+    <p>Картинката илюстрира концепцията за абстракция чрез примери с банкомат (ATM) и кафе машина. Потребителите използват тези устройства, без да знаят <code>вътрешната им реализация</code> – те виждат само необходимите функции, като теглене на пари или приготвяне на кафе. Това съответства на принципа на абстракция в програмирането, където сложността се скрива, а се предоставя само съществената функционалност.</p>
+</div>
+
+<div class="footer_section">
+</div>
+<div class="copyright_section">
+    <div class="container">
+        <p class="copyright_text">© CSharp Master - Всички права запазени.
+        </p>
+    </div>
+</div>

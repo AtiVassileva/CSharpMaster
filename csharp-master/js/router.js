@@ -1,10 +1,8 @@
 const routes = {
     "/": "/pages/home.html",
-    "/lessons": "/pages/lessons.html",
-    "/quiz": "/pages/quiz.html",
-    "/about": "/pages/about.html",
-    "/login": "/pages/login.html",
-    404: "/pages/404.html"
+    "/lessons": "/pages/principles.html",
+    "/solid": "/pages/solid.html",
+    "/about": "/pages/about.html"
 };
 
 const route = (event) => {
@@ -22,6 +20,11 @@ const handleLocation = async () => {
     const content = document.getElementById("app");
     content.innerHTML = html;
 
+    scrollToTop();
+};
+
+const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 window.onpopstate = handleLocation;

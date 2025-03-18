@@ -1,0 +1,86 @@
+<div class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="logo"><a href="/" class="logo-link"><img src="images/logo.png" width="100">Master</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/" onclick="route()">Начало</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about" onclick="route()">За нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/lessons" onclick="route()">4-те принципа</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/solid" onclick="route()">SOLID</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div id="solid" class="lesson-container">
+    <div class="courses_section layout_padding">
+        <div class="container">
+            <h1 class="courses_taital">SOLID принципите в OOП</h1>
+            <p class="courses_text">SOLID е съвкупност от пет основни принципа в обектно-ориентираното програмиране, които
+                правят кода по-модулен, поддържан и мащабируем.</p>
+            <div class="courses_section_2">
+                <div class="flag_main">
+                    <div class="flag_text" style="background: #fa364d;"><img src="../images/left-arrow.png"><span class="padding_left_15">Single Responsibility</span></div>
+                    <hr class="border_bg">
+                </div>
+                <div class="flag_main">
+                    <div class="flag_text" style="background: #36adb4;"><img src="../images/left-arrow.png"><span class="padding_left_15">Open / Closed</span></div>
+                    <hr class="border_bg">
+                </div>
+                <div class="flag_main">
+                    <div class="flag_text" style="background: #172e5b;"><img src="../images/left-arrow.png"><span class="padding_left_15">Liskov Substitution</span></div>
+                    <hr class="border_bg">
+                </div>
+                <div class="flag_main">
+                    <div class="flag_text" style="background: #f25e0f;"><img src="../images/left-arrow.png"><span class="padding_left_15">Interface Segregation</span></div>
+                    <hr class="border_bg">
+                </div>
+                <div class="flag_main">
+                    <div class="flag_text" style="background: #1dac4f;"><img src="../images/left-arrow.png"><span class="padding_left_15">Dependecy Inversion</span></div>
+                    <hr class="border_bg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>1. Single Responsibility</h2>
+    <p>Всеки клас трябва да има <code>само една отговорност.</code></p>
+
+    <div class="code">
+        <pre>
+            public class Report 
+            {
+                public void GenerateReport() 
+                {
+                    // Генериране на отчет
+                }
+            }
+        </pre>
+    </div>
+    <p>В този пример класът <code>Report</code> дефинира метода <code>GenerateReport()</code>, който има една единствена задача - да генерира отчет.</p>
+    <br />
+</div>
+
+<div class="footer_section">
+</div>
+<div class="copyright_section">
+    <div class="container">
+        <p class="copyright_text">© CSharp Master - Всички права запазени.
+        </p>
+    </div>
+</div>
