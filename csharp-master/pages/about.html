@@ -9,18 +9,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item $`{(window.location.pathname === '/') ? 'active' : ''}`">
                         <a class="nav-link" href="/" onclick="route()">Начало</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ${(window.location.pathname === '/about') ? 'active' : ''}">
                         <a class="nav-link" href="/about" onclick="route()">За нас</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ${(window.location.pathname === '/lessons') ? 'active' : ''}">
                         <a class="nav-link" href="/lessons" onclick="route()">4-те принципа</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ${(window.location.pathname === '/solid') ? 'active' : ''}">
                         <a class="nav-link" href="/solid" onclick="route()">SOLID</a>
-                    </li>
+                    </li>                   
                 </ul>
             </div>
         </nav>

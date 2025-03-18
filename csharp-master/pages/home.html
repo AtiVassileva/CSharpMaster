@@ -9,16 +9,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item $`{(window.location.pathname === '/') ? 'active' : ''}`">
                         <a class="nav-link" href="/" onclick="route()">Начало</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ${(window.location.pathname === '/about') ? 'active' : ''}">
                         <a class="nav-link" href="/about" onclick="route()">За нас</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ${(window.location.pathname === '/lessons') ? 'active' : ''}">
                         <a class="nav-link" href="/lessons" onclick="route()">4-те принципа</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ${(window.location.pathname === '/solid') ? 'active' : ''}">
                         <a class="nav-link" href="/solid" onclick="route()">SOLID</a>
                     </li>                   
                 </ul>
@@ -31,10 +31,10 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <p class="banner_text">C# OOP</p>
-                        <h1 class="banner_taital">Стани C# OOP мастър!</h1>
+                        <p class="banner_text">C# OOП</p>
+                        <h1 class="banner_taital">Стани C# OOП мастър!</h1>
                         <h4 class="banner_taital_small">Ние сме тук да ти помогнем!</h4>
-                        <div class="read_bt"><a href="#">Към уроците</a></div>
+                        <div class="read_bt"><a href="/lessons" onclick="route()">Към уроците</a></div>
                     </div>
                 </div>
             </div>
@@ -49,28 +49,28 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div class="box_main">
-                        <div class="icon_1"><img src="images/inheritance-image.png" height="400"></div>
+                        <div class="icon_1"><img src="../images/inheritance-image.png" height="400"></div>
                         <h6 class="heavy_text">Наследяване</h6>
                     </div>
                     <div class="readmore_bt"><a href="/lessons#inheritance" onclick="route()">Към урока</a></div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="box_main">
-                        <div class="icon_1"><img src="images/encapsulation.png" height="400"></div>
+                        <div class="icon_1"><img src="../images/encapsulation.png" height="400"></div>
                         <h6 class="heavy_text">Енкапсулация</h6>
                     </div>
                     <div class="readmore_bt active"><a href="/lessons#encapsulation" onclick="route()">Към урока</a></div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="box_main">
-                        <div class="icon_1"><img src="images/polymorphism.png"></div>
+                        <div class="icon_1"><img src="../images/polymorphism-1.png"></div>
                         <h6 class="heavy_text">Полиморфизъм</h6>
                     </div>
                     <div class="readmore_bt"><a href="/lessons#polymorphism" onclick="route()">Към урока</a></div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="box_main">
-                        <div class="icon_1"><img src="../images/abstraction.png"></div>
+                        <div class="icon_1"><img src="../images/abstraction-1.png"></div>
                         <h6 class="heavy_text">Абстракция</h6>
                     </div>
                     <div class="readmore_bt"><a href="/lessons#abstraction" onclick="route()">Към урока</a></div>

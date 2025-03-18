@@ -27,6 +27,15 @@ const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
+document.addEventListener("DOMContentLoaded", () => {
+    let path = window.location.pathname;
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('href') === path) {
+            link.parentElement.classList.add('active');
+        }
+    });
+});
+
 window.onpopstate = handleLocation;
 window.route = route;
 

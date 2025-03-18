@@ -9,7 +9,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/" onclick="route()">Начало</a>
                     </li>
                     <li class="nav-item">
@@ -20,7 +20,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/solid" onclick="route()">SOLID</a>
-                    </li>
+                    </li>                   
                 </ul>
             </div>
         </nav>
@@ -31,34 +31,40 @@
     <div class="courses_section layout_padding">
         <div class="container">
             <h1 class="courses_taital">SOLID принципите в OOП</h1>
-            <p class="courses_text">SOLID е съвкупност от пет основни принципа в обектно-ориентираното програмиране, които
+            <p class="courses_text">SOLID е съвкупност от пет основни принципа в обектно-ориентираното програмиране,
+                които
                 правят кода по-модулен, поддържан и мащабируем.</p>
             <div class="courses_section_2">
                 <div class="flag_main">
-                    <div class="flag_text" style="background: #fa364d;"><img src="../images/left-arrow.png"><span class="padding_left_15">Single Responsibility</span></div>
+                    <div class="flag_text" style="background: #fa364d;"><img src="../images/left-arrow.png"><span
+                            class="padding_left_15">Single Responsibility</span></div>
                     <hr class="border_bg">
                 </div>
                 <div class="flag_main">
-                    <div class="flag_text" style="background: #36adb4;"><img src="../images/left-arrow.png"><span class="padding_left_15">Open / Closed</span></div>
+                    <div class="flag_text" style="background: #36adb4;"><img src="../images/left-arrow.png"><span
+                            class="padding_left_15">Open / Closed</span></div>
                     <hr class="border_bg">
                 </div>
                 <div class="flag_main">
-                    <div class="flag_text" style="background: #172e5b;"><img src="../images/left-arrow.png"><span class="padding_left_15">Liskov Substitution</span></div>
+                    <div class="flag_text" style="background: #172e5b;"><img src="../images/left-arrow.png"><span
+                            class="padding_left_15">Liskov Substitution</span></div>
                     <hr class="border_bg">
                 </div>
                 <div class="flag_main">
-                    <div class="flag_text" style="background: #f25e0f;"><img src="../images/left-arrow.png"><span class="padding_left_15">Interface Segregation</span></div>
+                    <div class="flag_text" style="background: #f25e0f;"><img src="../images/left-arrow.png"><span
+                            class="padding_left_15">Interface Segregation</span></div>
                     <hr class="border_bg">
                 </div>
                 <div class="flag_main">
-                    <div class="flag_text" style="background: #1dac4f;"><img src="../images/left-arrow.png"><span class="padding_left_15">Dependecy Inversion</span></div>
+                    <div class="flag_text" style="background: #1dac4f;"><img src="../images/left-arrow.png"><span
+                            class="padding_left_15">Dependecy Inversion</span></div>
                     <hr class="border_bg">
                 </div>
             </div>
         </div>
     </div>
 
-    <h2>1. Single Responsibility</h2>
+    <h2 class="solid-titles" style="color: #fa364d;">1. Single Responsibility</h2>
     <p>Всеки клас трябва да има <code>само една отговорност.</code></p>
 
     <div class="code">
@@ -72,8 +78,132 @@
             }
         </pre>
     </div>
-    <p>В този пример класът <code>Report</code> дефинира метода <code>GenerateReport()</code>, който има една единствена задача - да генерира отчет.</p>
+    <p>В този пример класът <code>Report</code> дефинира метода <code>GenerateReport()</code>, който има една единствена
+        задача - да генерира отчет.</p>
     <br />
+
+    <h2 class="solid-titles" style="color: #36adb4;">2. Open / Closed</h2>
+    <p>Класовете трябва да са <code>отворени за разширение,</code> но <code>затворени за промяна.</code></p>
+
+    <div class="code">
+        <pre>
+            public abstract class Shape 
+            {
+                public abstract double GetArea();
+            }
+            
+            public class Circle : Shape 
+            {
+                public double Radius { get; set; }
+                public override double GetArea() => Math.PI * Radius * Radius;
+            }
+        </pre>
+    </div>
+    <p>В този пример абстрактният клас Shape определя метод GetArea(), който се имплементира в Circle,
+        <code>без да се налага промяна в базовия клас.</code> Това позволява лесно разширяване на кода чрез добавяне на
+        нови фигури, без да се променя вече съществуващата структура.
+    </p>
+    <br />
+
+    <h2 class="solid-titles" style="color: #172e5b">3. Liskov Substitution</h2>
+    <p>Обектите от наследени класове трябва да могат да заменят обектите от базовия клас
+        <code>без промяна в поведението.</code>
+    </p>
+
+    <div class="code">
+        <pre>
+            public class Bird 
+            {
+                public virtual void Fly() 
+                {
+                    Console.WriteLine("Птицата лети.");
+                }
+            }
+            
+            public class Sparrow : Bird 
+            { 
+            }
+        </pre>
+    </div>
+    <p>В този пример класът Sparrow наследява Bird и <code>може да се използва навсякъде,</code> където се очаква Bird,
+        без да променя поведението на програмата. Това гарантира, че наследените класове могат да заместят базовия клас
+        <code>без нежелани странични ефекти.</code>
+    </p>
+    <br />
+
+    <h2 class="solid-titles" style="color: #f25e0f;">4. Interface Segregation</h2>
+    <p>Класовете не трябва да бъдат принуждавани да имплементират интерфейси,<code> които не използват.</code></p>
+
+    <div class="code">
+        <pre>
+            public interface IWorker 
+            {
+                void Work();
+            }
+            
+            public interface IEater 
+            {
+                void Eat();
+            }
+            
+            public class Human : IWorker, IEater 
+            {
+                public void Work() 
+                {
+                    Console.WriteLine("Човекът работи.");
+                }
+            
+                public void Eat() 
+                {
+                    Console.WriteLine("Човекът яде.");
+                }
+            }
+            
+            public class Dog : IEater 
+            {
+                public void Eat() 
+                {
+                    Console.WriteLine("Кучето яде.");
+                }
+            }
+            
+        </pre>
+    </div>
+    <p>Този пример доказва ефективността на това вместо един голям интерфейс с несвързани функционалности, да имаме два
+        отделни интерфейса – IWorker за работещи обекти и IEater за обекти, които могат да ядат. Human имплементира и
+        двата интерфейса, защото може да работи и да яде, докато Dog имплементира само IEater, тъй като не работи. Това
+        гарантира, че <code>класовете не са принудени да имплементират ненужни методи.</code></p>
+    <br />
+
+    <h2 class="solid-titles" style="color: #1dac4f;">5. Dependecy Inversion</h2>
+    <p>Високите нива на кода не трябва да зависят от детайлите на ниските нива, а и двете трябва да зависят
+        от<code> абстракции.</code></p>
+
+    <div class="code">
+        <pre>
+            public interface IMessageSender 
+            {
+                void SendMessage(string message);
+            }
+            
+            public class EmailSender : IMessageSender 
+            {
+                public void SendMessage(string message) 
+                {
+                    Console.WriteLine("Изпращане на имейл: " + message);
+                }
+            }
+        </pre>
+    </div>
+    <p>Този пример показва как вместо класовете да зависят от конкретна имплементация (EmailSender), те
+        <code>работят с абстракция (IMessageSender)</code>, което позволява лесна подмяна на начина на изпращане на
+        съобщения (например SMS, чат и т.н.) <code>без промени в основния код.</code></p>
+    <br />
+    <h2 class="solid-titles">Заключение</h2>
+    <p>В този урок разгледахме SOLID принципите и тяхното значение за писането на добре структуриран, поддържаем и
+        мащабируем код. Всеки принцип помага да се избегнат често срещани проблеми, като твърде силни зависимости,
+        трудна разширяемост и нарушена четимост на кода. Следвайки тези насоки, можем да изградим по-гъвкави и ефективни
+        софтуерни решения!</p>
 </div>
 
 <div class="footer_section">

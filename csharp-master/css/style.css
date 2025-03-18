@@ -448,7 +448,7 @@ button {
 .image_5 {
     width: 100%;
     float: left;
-    background-image: url(../images/polymorphism.png);
+    background-image: url(../images/polymorphism-1.png);
     height: 200px;
     background-size: 100%;
     padding: 70px 0
@@ -457,7 +457,7 @@ button {
 .image_5_1 {
     width: 100%;
     float: left;
-    background-image: url(../images/abstraction.jpg);
+    background-image: url(../images/abstraction-1.png);
     height: 200px;
     background-size: 100%;
     padding: 70px 0
@@ -787,4 +787,8 @@ pre {
 
 .nav-item {
     color: red
+}
+
+.solid-titles {
+    font-weight: bold;
 }
