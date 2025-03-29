@@ -162,7 +162,8 @@ button {
     float: left;
     background-image: url(../images/csharp-bg.png);
     height: auto;
-    background-size: 100%
+    background-size: 100%;
+    margin-bottom: 30px;
 }
 
 .logo {
@@ -346,21 +347,19 @@ button {
 .readmore_bt a {
     width: 100%;
     float: left;
-    font-size: 18px;
-    color: #2d2d2d;
-    border-bottom: 3px solid #dbc64c;
+    font-size: 16px;
     text-align: center;
-    margin-top: 60px;
-    font-weight: 500
+    font-weight: 500;
+    background: #270b60;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin: 18px 0;
 }
 
 .readmore_bt a:hover {
     color: #dbc64c;
     border-bottom: 3px solid #dbc64c
-}
-
-.readmore_bt.active a {
-    color: #dbc64c
 }
 
 .appoinment_bt {
@@ -402,24 +401,26 @@ button {
     float: left;
     background-color: #270b60;
     height: auto;
-    padding: 90px 0 200px 0
+    padding: 90px 0 60px 0;
 }
 
 .gallery_taital {
     width: 100%;
     float: left;
-    font-size: 40px;
+    font-size: 30px;
     color: #dbc64c;
     font-weight: 700;
-    padding: 0
+    padding: 0;
+    text-align: center;
 }
 
 .gallery_text {
-    width: 45%;
+    width: 100%;
     float: left;
-    font-size: 16px;
+    font-size: 15px;
     color: #fff;
-    margin: 0
+    margin: 10px;
+    text-align: center;
 }
 
 .gallery_section_2 {
@@ -634,7 +635,7 @@ button {
 }
 
 .flag_main {
-    width: 100%;
+    width: 190%;
     display: flex;
     margin-top: 20px
 }
@@ -765,7 +766,8 @@ button {
 }
 
 pre {
-    color: #fff
+    color: #fff;
+    overflow-x: scroll;
 }
 
 .lessons-nav {
